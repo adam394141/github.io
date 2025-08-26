@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳宗民 Adam - 品牌顧問 | AI講師 | LINE健檢顧問</title>
+    <meta name="description" content="Adam擅長結合品牌定位、生成式AI應用與LINE官方帳號數位行銷策略，協助企業打造獨特的品牌價值">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3B82F6;
+            --secondary-color: #60A5FA;
+            --light-blue: #EFF6FF;
+            --dark-text: #1F2937;
+            --gray-text: #6B7280;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #FAFAFA;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark-text);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--gray-text);
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            background: var(--light-blue);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .portfolio-content p {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .portfolio-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: var(--light-blue);
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+        }
+
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Add to Portfolio Button */
+        .add-work-btn {
+            background: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 2rem auto;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .add-work-btn:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Adam Chen</div>
+            <ul class="nav-links">
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#portfolio">作品集</a></li>
+                <li><a href="#contact">聯絡方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>陳宗民 Adam</h1>
+            <div class="subtitle">品牌顧問 • AI講師 • LINE健檢顧問</div>
+            <p class="description">
+                我是Adam，擅長結合品牌定位、生成式AI應用與LINE官方帳號數位行銷策略，協助企業打造獨特的品牌價值，並透過LINE串連線上與線下通路，提升客戶體驗與行銷成效。
+                <br><br>
+                同時，專注於培訓與實戰應用，將複雜的AI與數位工具轉化為企業立即可用的行銷解方。
+                <br><br>
+                我相信好的策略，不僅是讓品牌被看見，更是讓品牌持續被理解與選擇。
+            </p>
+            <a href="#contact" class="cta-button">開始合作</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">關於我</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <div class="profile-image">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>專業領域與核心價值</h3>
+                <p>
+                    具備豐富的品牌策略與數位行銷經驗，專精於將新興科技應用於商業實務中。透過深入了解企業需求，提供客製化的解決方案，幫助企業在數位轉型的路上找到最適合的發展方向。
+                </p>
+                <p>
+                    在教學方面，致力於將複雜的技術概念轉化為易懂的實用知識，讓學員能夠快速上手並應用於實際工作中。相信學習的最終目的是解決問題，創造價值。
+                </p>
+                <div class="expertise-tags">
+                    <span class="tag">品牌策略</span>
+                    <span class="tag">生成式AI應用</span>
+                    <span class="tag">LINE官方帳號</span>
+                    <span class="tag">數位行銷</span>
+                    <span class="tag">企業培訓</span>
+                    <span class="tag">策略顧問</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <h2 class="section-title">AI作品集</h2>
+        <div class="portfolio-grid">
+            <!-- 視覺化作品示例 -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>數據視覺化作品</h3>
+                    <p>運用AI工具創建的互動式數據分析報告，幫助企業更好地理解市場趨勢和客戶行為。</p>
+                    <a href="#" class="portfolio-link">
+                        查看詳細 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 教學影片示例 -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>AI應用教學影片</h3>
+                    <p>製作一系列生成式AI應用教學影片，涵蓋從基礎概念到實戰應用的完整學習路徑。</p>
+                    <a href="#" class="portfolio-link">
+                        觀看影片 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 實際應用案例示例 -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>企業AI導入案例</h3>
+                    <p>協助中小企業導入AI工具，提升營運效率並降低成本，實際ROI提升超過30%。</p>
+                    <a href="#" class="portfolio-link">
+                        案例研究 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新增作品按鈕（供你日後新增作品使用） -->
+        <button class="add-work-btn" onclick="addNewWork()" style="display: none;">
+            + 新增作品
+        </button>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title">聯絡方式</h2>
+        <div class="contact">
+            <h3>讓我們開始合作</h3>
+            <p>無論是品牌策略顧問、AI教學培訓，或是LINE官方帳號健檢，我都很樂意為您提供專業服務。</p>
+            
+            <div class="contact-methods">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>電子信箱</h4>
+                    <a href="mailto:adam394141@gmail.com">adam394141@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fab fa-line"></i>
+                    <h4>LINE官方帳號</h4>
+                    <a href="https://line.me/R/ti/p/@sct2009">@sct2009</a>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>聯絡電話</h4>
+                    <a href="tel:+886-911-334-153">0911-334-153</a>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <a href="https://linkedin.com/in/your-profile">專業檔案</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 陳宗民 Adam. All rights reserved. | 品牌顧問 • AI講師 • LINE健檢顧問</p>
+    </footer>
+
+    <script>
+        // 平滑滾動效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // 導航列滾動效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = '#ffffff';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+
+        // 新增作品功能（供日後使用）
+        function addNewWork() {
+            // 這個函數是為了日後你新增作品時使用
+            // 你可以複製現有的 portfolio-item 結構來新增作品
+            alert('請直接編輯 HTML 文件來新增新作品！');
+        }
+    </script>
+</body>
+</html>
